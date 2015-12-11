@@ -4,24 +4,17 @@ This package provides RooiOntmoet OAuth 2.0 support for the PHP League's [OAuth 
 
 ## Requirements
 
-The following versions of PHP are supported.
-
-* PHP 5.5
-* PHP 5.6
-* PHP 7.0
-* HHVM
+* PHP 5.5 or higher
 
 ## Installation
 
-Add the following to your `composer.json` file.
+Require this package with Composer:
 
-```json
-{
-    "require": {
-        "fruitcake/oauth2-rooiontmoet": "~1.0@dev"
-    }
-}
 ```
+composer require fruitcake/oauth2-rooiontmoet:"~1.0@dev"
+```
+
+> During development, the `@dev` flag is required.
 
 ## Usage
 
@@ -33,6 +26,7 @@ Add the following to your `composer.json` file.
 You will need to apply for API access. By default, only `profile` access is granted.
 Admin users can have access to more scopes, depending on the access level. Contact Fruitcake for more information.
 
+> Only verified endpoints have access, so make sure you register those first!
 
 ### Authorization Code Flow
 
