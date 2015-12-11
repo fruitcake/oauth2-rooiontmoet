@@ -1,0 +1,41 @@
+{
+    "name": "fruitcake/oauth2-rooiontmoet",
+    "description": "RooiOntmoet OAuth 2.0 Client Provider for The PHP League OAuth2-Client",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fruitcake",
+            "email": "info@fruitcake.nl",
+            "homepage": "https://github.com/fruitcakestudio"
+        }
+    ],
+    "keywords": [
+        "oauth",
+        "oauth2",
+        "client",
+        "authorization",
+        "authorisation",
+        "rooiontmoet"
+    ],
+    "require": {
+        "php": ">=5.5.0",
+        "league/oauth2-client": "~1.0"
+    },
+    "require-dev": {
+        "laravel/socialite": "~2.0",
+        "symfony/var-dumper": "~3.0"
+    },
+    "suggest": {
+        "laravel/socialite": "Required to use the Socialite provider (~2.0)."
+    },
+    "autoload": {
+        "psr-4": {
+            "RooiOntmoet\\OAuth2\\Client\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}
