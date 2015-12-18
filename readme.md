@@ -114,6 +114,7 @@ var_dump($name);
 $email = $user->getEmail();
 var_dump($email);
 # string(15) "user@example.com"
+```
 
 You can also get all the data from the User node as a plain-old PHP array with `toArray()`.
 
