@@ -31,6 +31,9 @@ Admin users can have access to more scopes, depending on the access level. Conta
 ### Authorization Code Flow
 
 ```php
+
+require __DIR__ .'/../vendor/autoload.php';
+
 session_start();
 
 // Create Provider
@@ -70,29 +73,31 @@ if (!isset($_GET['code'])) {
         // We got an access token, let's now get the user's details
         $user = $provider->getResourceOwner($token);
 
-        dd($user);
         // Use these details to create a new profile
         printf('Hello %s!', $user->getName());
 
+        echo '<pre>';
+
+        // Use this to save the user information
+        print_r($user->toArray());
+
+        // Use this to interact with an API on the users behalf
+        var_dump($token->getToken());
+        # string(217) "CAADAppfn3msBAI7tZBLWg...
+
+        // Number of seconds until the access token will expire, and need refreshing
+        var_dump($token->getExpires());
+        # int(1436825866)
+
+        echo '</pre>';
     } catch (Exception $e) {
 
         // Failed to get user details
         exit('Oh dear...' . $e->getMessage());
     }
 
-    // Use this to interact with an API on the users behalf
-    echo $token->getToken();
 }
 
-echo '<pre>';
-// Use this to interact with an API on the users behalf
-var_dump($token->getToken());
-# string(217) "CAADAppfn3msBAI7tZBLWg...
-
-// Number of seconds until the access token will expire, and need refreshing
-var_dump($token->getExpires());
-# int(1436825866)
-echo '</pre>';
 ```
 
 ### The RooiOntmoetUser Entity
